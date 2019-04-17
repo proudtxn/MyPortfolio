@@ -75,26 +75,66 @@ nav ul li a:focus {
 nav ul li a.active {
     background: red;
     color: #fff;
-    border-radius: 25px 10px;
+    border-radius: 25px 0px;
 }
 
 nav ul li a:hover {
     background: red;
     color: #fff;
-    border-radius: 25px 10px;
+    border-radius: 25px 0px;
+    transition: .5s;
 }
 
 
 
 
 /********  BACKGROUND IMAGE  ***********/
-section.sec1 {
+section#home {
     width: 100%;
     height: 100vh;
-    background: url(/images/mountainstream.jpg);
+    background: url(/images/Coding1.jpg);
     background-size: cover;
     background-position: center;
 }
+
+section#home h1 {
+    color: red;
+    opacity: .8;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+}
+
+section h1 {
+    font-size: 4rem;
+}
+
+section p {
+    font-size: 1.5rem;
+}
+
+section#about {
+    background: url(/images/mountainsailing.jpg) no-repeat center center/cover;
+}
+
+section#portfolio {
+    background: url(/images/coding3.jpg) no-repeat center center/cover;
+    color: white;
+}
+
+section#contact {
+    background: url(/images/keyboard.jpg) no-repeat center center/cover;
+    color: red;
+}
+
+
 
 
 
