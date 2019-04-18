@@ -72,7 +72,7 @@ nav ul li a:focus {
     outline: none;
 }
 
-nav ul li a.active {
+.active {
     background: red;
     color: #fff;
     border-radius: 25px 0px;
