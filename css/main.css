@@ -99,7 +99,6 @@ section#home {
 
 section#home h1 {
     color: red;
-    opacity: .8;
 }
 
 section {
@@ -132,6 +131,62 @@ section#portfolio {
 section#contact {
     background: url(/images/keyboard.jpg) no-repeat center center/cover;
     color: red;
+}
+
+
+
+
+
+
+/********  CONTACT PAGE  ***********/
+#contact {
+    text-transform: uppercase;
+    display: table;
+    padding: 50px;
+    box-sizing: border-box;
+}
+
+/********  CONTACT FORM  ***********/
+#contact .contactForm {
+    line-height: 1.6;
+    font-family: 'quicksand', sans-serif;
+    float: left;
+    width: 40%;
+}
+
+.contactForm form {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 5px;
+}
+
+.contactForm form input, .contactForm form textarea {
+    width: 90%;
+    padding: 1em;
+    background: red;
+    border: red;
+    box-shadow: 0px 0px 5px 1px rgba(255, 255, 255, .3);
+}
+
+.contactForm form button {
+    width: 25%;
+    padding: .5em;
+}
+
+.contactForm form label input::placeholder, .contactForm form label textarea::placeholder {
+    font-family: 'quicksand', sans-serif;
+    color: white;
+}
+
+.contactForm form label input:focus, .contactForm form label textarea:focus {
+    font-family: 'quicksand', sans-serif;
+    color: white;
+}
+
+.contactForm .submit {
+    font-family: 'quicksand', sans-serif;
+    color: black;
+    text-transform: uppercase;
 }
 
 
