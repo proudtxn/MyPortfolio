@@ -34,12 +34,13 @@ $(document).ready(function () {
 		);
 	});
 
-	// Active link switching
+
+	// ACTIVE LINK SWITCHING
 	$(window).scroll(function () {
 		var scrollbarLocation = $(this).scrollTop();
 
 		scrollLink.each(function () {
-			var sectionOffset = $(this.hash).offset().top - 20;
+			var sectionOffset = $(this.hash).offset().top - 200;
 
 			if (sectionOffset <= scrollbarLocation) {
 				$(this).parent().addClass('active');
@@ -47,4 +48,39 @@ $(document).ready(function () {
 			}
 		});
 	});
+
+
+	// CONTACT FORM SUBMISSION
+	$('.submit').click(function (e) {
+
+		var name = $('.name').val();
+		var email = $('.email').val();
+		var subject = $('.subject').val();
+		var message = $('.message').val();
+		var statusElement = $('.status');
+		statusElement.empty();
+
+		if (name.length < 2) {
+			e.preventDefault()
+			statusElement.append(alert("Your name is not valid"));
+		}
+		else if (email.length <= 5 && !email.includes('@') && !email.includes('.')) {
+			e.preventDefault()
+			statusElement.append(alert("Your email address is not a valid address."));
+		}
+		else if (subject.length < 2) {
+			e.preventDefault()
+			statusElement.append(alert("Your subject does not contain enough characters."));
+		}
+		else if (message.length < 10) {
+			e.preventDefault()
+			statusElement.append(alert("Your message does not contain the minimum characters."));
+		}
+		else {
+			statusElement.empty();
+			statusElement.append(alert("Thank you for contacting me.  I will get back to you as soon as possible."));
+		}
+	});
+
+
 });

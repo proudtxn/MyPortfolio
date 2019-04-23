@@ -44,22 +44,25 @@
             <h1>Contact</h1>
             <div class="contactForm">
                 <h3>Email Me</h3>
-                <form action="">
+                <form action="https://formspree.io/phillip.t.pense@gmail.com" method="POST">
                     <label>
-                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="text" class="name" name="name" placeholder="Your Name" required>
                     </label>
                     <label>
-                        <input type="email" name="email" placeholder="Your Email Address" required>
+                        <input type="email" class="email" name="email" placeholder="Your Email Address" required>
                     </label>
                     <label>
-                        <textarea name="message" rows="10" placeholder="Type your message here" required></textarea>
+                        <input type="subject" class="subject" name="subject" placeholder="What is the subject of your email?" required>
                     </label>
                     <label>
-                        <button type="submit" class="submit">Send</button>
+                        <textarea class="message" name="message" rows="10" placeholder="Type your message here" required></textarea>
                     </label>
                     <div class="status">
 
                     </div>
+                    <label>
+                        <button type="submit" class="submit">Send</button>
+                    </label>
                 </form>
             </div>
         </section>
