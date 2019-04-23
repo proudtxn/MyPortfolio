@@ -161,7 +161,7 @@ section#contact {
 }
 
 .contactForm form input, .contactForm form textarea {
-    width: 90%;
+    width: 95%;
     padding: 1em;
     background: red;
     border: red;
@@ -169,8 +169,8 @@ section#contact {
 }
 
 .contactForm form button {
-    width: 25%;
-    padding: .5em;
+    float: right;
+    background-color: rgba(0, 0, 0, 0)
 }
 
 .contactForm form label input::placeholder, .contactForm form label textarea::placeholder {
@@ -183,10 +183,47 @@ section#contact {
     color: white;
 }
 
+
+
+/********  CONTACT FORM SUBMIT BUTTON SHINEY ANIMATION  ***********/
 .contactForm .submit {
     font-family: 'quicksand', sans-serif;
     color: black;
     text-transform: uppercase;
+    padding: 0.75em 3em;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    border: 2px solid white;
+    font-size: 15px;
+    display: inline-block;
+    border-radius: 0.3em;
+    transition: all 0.2s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.contactForm .submit::before {
+    content: '';
+    background-color: rgba(255, 255, 255, 0.5);
+    height: 100%;
+    width: 3em;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -4.5em;
+    transform: skewX(-45deg) translateX(0);
+    transition: none;
+}
+
+.contactForm .submit:hover{
+    background-color: red;
+    border: 2px solid red; 
+}
+
+.contactForm .submit:hover::before {
+    transform: skewX(-45deg) translateX(15.5em);
+    transition: all 0.5s ease-in-out;
 }
 
 
