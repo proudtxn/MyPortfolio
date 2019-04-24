@@ -43,7 +43,7 @@
         <section id="contact">
             <h1>Contact</h1>
             <div class="contactForm">
-                <h3>Email Me</h3>
+                <p>Email Me</p>
                 <form action="https://formspree.io/phillip.t.pense@gmail.com" method="POST">
                     <label>
                         <input type="text" class="name" name="name" placeholder="Your Name" required>
@@ -65,6 +65,10 @@
                     </label>
                 </form>
             </div>
+            <div class="locateMe">
+                <p>Locate Me</p>
+                <div id="map"></div>
+            </div>
         </section>
     </div>
 
@@ -84,6 +88,7 @@
     <!--  SCRIPTS  -->
     <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?callback=createMap&key=AIzaSyBM-XPoU01D1VC5nOMlkOF4EhIS2FE8MPU" async defer></script>
     <script src="/js/main.js"></script>
     
 </body>

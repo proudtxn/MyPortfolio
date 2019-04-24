@@ -141,17 +141,27 @@ section#contact {
 /********  CONTACT PAGE  ***********/
 #contact {
     text-transform: uppercase;
-    display: table;
+    display: grid;
     padding: 50px;
     box-sizing: border-box;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1em;
+    grid-auto-rows: minmax(100px, auto);
+    justify-items: stretch;
+    align-items: start;
+    overflow: none;
 }
+
+#contact h1 {
+    grid-column: 1/5;
+}
+
 
 /********  CONTACT FORM  ***********/
 #contact .contactForm {
+    grid-column: 1/3;
     line-height: 1.6;
     font-family: 'quicksand', sans-serif;
-    float: left;
-    width: 40%;
 }
 
 .contactForm form {
@@ -182,7 +192,6 @@ section#contact {
     font-family: 'quicksand', sans-serif;
     color: white;
 }
-
 
 
 /********  CONTACT FORM SUBMIT BUTTON SHINEY ANIMATION  ***********/
@@ -224,6 +233,20 @@ section#contact {
 .contactForm .submit:hover::before {
     transform: skewX(-45deg) translateX(15.5em);
     transition: all 0.5s ease-in-out;
+}
+
+
+/********  CONTACT PAGE ~ LOCATE ME W/ GOOGLE MAPS  ***********/
+.locateMe {
+    grid-column: 3/5;
+}
+
+.locateMe p {
+    padding: 5px;
+}
+
+#map {
+    height: 316px;
 }
 
 

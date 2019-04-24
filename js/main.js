@@ -1,3 +1,24 @@
+// LOCATE ME GOOGLE MAP JS
+var map;
+
+function createMap() {
+	var options = {
+		center: { lat: 30.5052, lng: -97.8203 },
+		zoom: 10
+	};
+
+	// New Map
+	map = new google.maps.Map(document.getElementById('map'), options);
+
+	// Add Marker
+	var marker = new google.maps.Marker({
+		position: { lat: 30.5052, lng: -97.8203 },
+		map:map
+	})
+}
+
+
+
 $(document).ready(function () {
 
 	// LOGO CHANGE UPON SCROLLING
