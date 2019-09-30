@@ -9,7 +9,7 @@ body {
 
 /********  HEADER - LOGO  ***********/
 header {
-    padding: 5px 20px;
+    padding: 5px 50px;
     float: left;
     font-size: 15px;
     position: fixed;
@@ -159,30 +159,24 @@ section#about p {
 
 /********  PORTFOLIO PAGE  ***********/
 #portfolio {
-    margin: 0;
-    padding: 0;
+    padding: 0 150px !important;
     background: 
-        linear-gradient(
-            rgba(50, 50, 50, 0.8),
-            rgba(50, 50, 50, 0.8)
-        ),  
-        url(/images/coding2.jpg) no-repeat center center/cover;
-    color: white;
-    align-items: unset;
-    justify-content: unset;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(6, 1fr);
-    height: 100vh;
+    linear-gradient(
+            rgba(255, 255, 255, 0.9),
+            rgba(255, 255, 255, 0.9)
+        ),
+        
+        url(/images/coding2.jpg);
+    background-size: cover;
+    background-position: center;
 }
 
 #portfolio h1 {
-    padding: 50px 25px 25px 25px;
+    padding-top: 50px;
+    color: black;
     letter-spacing: 5px;
-    font-weight: lighter;
+    text-align: center;
     text-transform: uppercase;
-    grid-column: 3/5;
-    grid-row: 1/2;
     justify-self: center;
 }
 
@@ -192,72 +186,305 @@ section#about p {
     margin: 0 auto;
     width: 50%;
     padding-top: 15px;
-    border-bottom: 5px solid black;
+    border-bottom: 5px solid rgba(22, 65, 129, .9);
 }
 
+@media screen and (max-width: 1280px) {
+    
+    #portfolio {
+        padding: 0 50px !important;
+    }
+}
+
+@media screen and (max-width: 800px) {
+
+    #portfolio {
+        padding: 0 15px !important;
+    }
+}
+
+/* Box Model */
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* Basic */
+
+@-ms-viewport {
+    width: device-width;
+}
+
+body {
+    -ms-overflow-style: scrollbar;
+}
+
+@media screen and (max-width: 480px) {
+
+    html, body {
+        min-width: 320px;
+    }
+}
+
+
+
+
+/* Box */
 .thumbnails {
-    padding: 0px 20px 50px 20px;
-    grid-column: 1/7;
-    grid-row: 2/7;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(4, 1fr);
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    -moz-align-items: stretch;
+    -webkit-align-items: stretch;
+    -ms-align-items: stretch;
+    align-items: stretch;
+    -moz-justify-content: center;
+    -webkit-justify-content: center;
+    -ms-justify-content: center;
+    justify-content: center;
+    -moz-flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
 }
 
-.thumbnails .boxes {
-    grid-column: 2/6;
-    grid-row: 1/5;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-template-rows: repeat(auto-fit, minmax(200, 1fr));
-    grid-gap: 15px;
+.thumbnails .box {
+    margin: 0 1em 2em 1em;
+    width: 30%;
 }
 
-.thumbnails .boxes .box1 {
-    background: url(/images/Portfolio\ Images/image1.jpg);
+@media screen and (max-width: 1280px) {
+
+    .thumbnails .box {
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 736px) {
+
+    .thumbnails .box {
+        width: 100%;
+    }
+}
+
+.box {
+    border-radius: 4px;
+    margin-bottom: 2em;
+    background: #2c2c32;
+    text-align: center;
+}
+
+.box > :last-child,
+.box > :last-child > :last-child,
+.box > :last-child > :last-child > :last-child {
+    margin-bottom: 0;
+}
+
+.box .image.fit {
+    margin: 0;
+}
+
+.box .image img {
+    border-radius: 4px 4px 0 0;
+}
+
+.box .inner {
+    padding: 1.5em;
+    width: 100% !important;
+}
+
+@media screen and (max-width: 480px) {
+
+    .box .inner {
+        padding: 1em;
+    }
+}
+
+.box.alt {
+    border: 0;
+    border-radius: 0;
+    padding: 0;
+}
+
+.box h3 {
+    color: white;
+    font-weight: 100;
+}
+
+.box p {
+    color: grey;
+    font-size: 15px;
+}
+
+
+/* Image */
+.image {
+    border-radius: 4px;
+    border: 0;
+    display: inline-block;
+    position: relative;
+}
+
+#modalImage {
+    display: none;
+}
+
+.image img {
+    border-radius: 4px;
+    display: block;
+}
+
+.image.left, .image.right {
+    max-width: 40%;
+}
+
+.image.left img, .image.right img {
     width: 100%;
-    background-size: cover;
-    background-position: center;
 }
 
-.thumbnails .boxes .box2 {
-    background: url(/images/Portfolio\ Images/image2.jpg);
+.image.left {
+    float: left;
+    padding: 0 1.5em 1em 0;
+    top: 0.25em;
+}
+
+.image.right {
+    float: right;
+    padding: 0 0 1em 1.5em;
+    top: 0.25em;
+}
+
+.image.fit {
+    display: block;
+    margin: 0 0 2em 0;
     width: 100%;
-    background-size: cover;
-    background-position: center;
 }
 
-.thumbnails .boxes .box3 {
-    background: url(/images/Portfolio\ Images/image3.jpg);
+.image.fit img {
     width: 100%;
-    background-size: cover;
-    background-position: center;
 }
 
-.thumbnails .boxes .box4 {
-    background: url(/images/Portfolio\ Images/image4.jpg);
+.image.main {
+    display: block;
+    margin: 0 0 3em 0;
     width: 100%;
-    background-size: cover;
-    background-position: center;
 }
 
-.thumbnails .boxes .box5 {
-    background: url(/images/Portfolio\ Images/image5.jpg);
+.image.main img {
     width: 100%;
-    background-size: cover;
-    background-position: center;
 }
 
-.thumbnails .boxes .box6 {
-    background: url(/images/Portfolio\ Images/image6.jpg);
+.button {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    -moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    -ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    background-color: #70c7be;
+    border-radius: 4px;
+    border: 0;
+    color: #ffffff !important;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 400;
+    height: 2.85em;
+    line-height: 2.95em;
+    padding: 0 1.5em;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.button:hover {
+    background-color: #82cec6;
+}
+
+.button.fit {
+    display: block;
+    margin: 0 0 1em 0;
     width: 100%;
-    background-size: cover;
-    background-position: center;
 }
 
+.button.small {
+    font-size: 0.8em;
+}
+
+.button.big {
+    font-size: 1.35em;
+}
+
+.button:disabled {
+    background-color: rgba(255, 255, 255, 0.75) !important;
+    box-shadow: inset 0 -0.15em 0 0 rgba(0, 0, 0, 0.15);
+    color: #202024 !important;
+    cursor: default;
+    opacity: 0.25;
+}
+
+.button.style2 {
+    background-color: #7f92cf;
+}
+
+.button.style2:hover {
+    background-color: #92a2d6;
+}
+
+.button.style2:active {
+    background-color: #6c82c8;
+}
+
+.button.style3 {
+    background-color: #9d7ed0;
+}
+
+.button.style3:hover {
+    background-color: #ab91d7;
+}
+
+.button.style3:active {
+    background-color: #8f6bc9;
+}
+
+@media screen and (max-width: 480px) {
+
+    .button {
+        padding: 0;
+    }
+}
+
+#portfolio {
+    padding: 4em 0 2em 0;
+}
+
+@media screen and (max-width: 736px) {
+
+    #portfolio {
+        padding: 3em 0 1em 0;
+    }
+
+}
+
+#porfolio .inner {
+    width: 90%;
+    max-width: 80em;
+    margin: 0 auto;
+}
+
+    @media screen and (max-width: 480px) {
+
+        #portfolio .inner {
+            width: 95%;
+        }
+
+    }
 
 
-
+/********  PORTFOLIO PAGE ~ END  ***********/
 
 
 
@@ -308,12 +535,13 @@ section#contact {
 #contact .contactForm {
     margin-top: -100px;
     padding: 0;
-    grid-column: 1/6;
+    grid-column: 1/7;
     grid-row: 2;
     justify-self: stretch;
     line-height: 1.6;
     font-family: 'quicksand', sans-serif;
     padding-left: 50px;
+    padding-right: 25px;
 }
 
 .contactForm h3 {
@@ -341,6 +569,7 @@ section#contact {
 .contactForm form button {
     float: right;
     background-color: black;
+    margin-right: 50px;
 }
 
 .contactForm form label input::placeholder, .contactForm form label textarea::placeholder {
@@ -404,6 +633,7 @@ section#contact {
     grid-row: 2;
     justify-self: stretch;
     padding-right: 50px;
+    padding-left: 25px;
 }
 
 .locateMe h3 {
@@ -415,7 +645,7 @@ section#contact {
 }
 
 #map {
-    height: 316px;
+    height: 319px;
 }
 
 
@@ -491,7 +721,7 @@ footer {
     margin: 0;
     padding: 10px;
     color: white;
-    background: grey;
+    background: rgba(52, 108, 143, 0.3);
     display: grid;
     grid-template-columns: repeat(24, 1fr);
     grid-template-rows: 1fr 1fr;
@@ -525,7 +755,7 @@ footer {
 
 .copyWrite p a {
     text-decoration: none;
-    color: #fff;
+    color: orangered;
 }
 
 

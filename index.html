@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Aclonica|Cabin+Sketch|Chelsea+Market|Delius|Marvel|Quicksand:500" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link type="text/css" rel="stylesheet" href="css/lightGallery.min.css" /> 
     <link rel="stylesheet" href="/css/main.css">
     <title>My Portfolio</title>
 </head>
@@ -49,29 +50,79 @@
             <h1>Projects</h1>
 
             <div class="thumbnails">
-                <div class="boxes">
-                    <div class="box1">
-                        
+
+                <div class="box">
+                    <div id="lightgallery">
+                        <a href="images/Portfolio Images/takemehome~screenshot.png" class="image fit">
+                            <img src="images/Portfolio Images/takemehome~screenshot.png" alt="" />
+                        </a>
+                        <a href="images/Portfolio Images/takemehome~mac.png" id="modalImage" class="image fit">
+                            <img src="images/Portfolio Images/takemehome~mac.png" alt="" />
+                        </a>
+                        <a href="images/Portfolio Images/takemehome-iphone1.png" id="modalImage" class="image fit">
+                            <img src="images/Portfolio Images/takemehome-iphone1.png" alt="" />
+                        </a>
+                        <a href="images/Portfolio Images/takemehome-ipad.png" id="modalImage" class="image fit">
+                            <img src="images/Portfolio Images/takemehome-ipad.png" alt="" />
+                        </a>
                     </div>
-                    <div class="box2">
-                         
-                    </div>
-                    <div class="box3">
-                           
-                    </div>
-                    <div class="box4">
-                          
-                    </div>
-                    <div class="box5">
-                            
-                    </div>
-                    <div class="box6">
-                        
+                    <div class="inner">
+                        <h3>Take Me Home Transport Website</h3>
+                        <p>Responsive front-end design landing page for charity organization.  HTML, CSS, Javascript, Bootstrap, JQuery, Grid.</p>
+                        <a href="https://takemehometransport.com" class="button fit" target="_blank">Website</a>
+                        <a href="https://github.com/proudtxn/TakeMeHomeTransport" class="button fit" target="_blank">GitHub</a>
                     </div>
                 </div>
-            </div>
-            
+
+                <div class="box">
+                    <a href="https://youtu.be/s6zR2T9vn2c" class="image fit" target="_blank"><img src="images/Portfolio Images/image2.jpg" alt="" /></a>
+                    <div class="inner">
+                        <h3>Nascetur nunc varius commodo</h3>
+                        <p>Interdum amet accumsan placerat commodo ut amet aliquam blandit nunc tempor lobortis nunc non. Mi accumsan.</p>
+                        <a href="https://youtu.be/s6zR2T9vn2c" class="button style2 fit" target="_blank" data-poptrox="youtube,800x400">Watch</a>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <a href="https://youtu.be/s6zR2T9vn2c" class="image fit" target="_blank"><img src="images/Portfolio Images/image3.jpg" alt="" /></a>
+                    <div class="inner">
+                        <h3>Nascetur nunc varius commodo</h3>
+                        <p>Interdum amet accumsan placerat commodo ut amet aliquam blandit nunc tempor lobortis nunc non. Mi accumsan.</p>
+                        <a href="https://youtu.be/s6zR2T9vn2c" class="button style3 fit" target="_blank" data-poptrox="youtube,800x400">Watch</a>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <a href="https://youtu.be/s6zR2T9vn2c" class="image fit" target="_blank"><img src="images/Portfolio Images/image4.jpg" alt="" /></a>
+                    <div class="inner">
+                        <h3>Nascetur nunc varius commodo</h3>
+                        <p>Interdum amet accumsan placerat commodo ut amet aliquam blandit nunc tempor lobortis nunc non. Mi accumsan.</p>
+                        <a href="https://youtu.be/s6zR2T9vn2c" class="button style2 fit" target="_blank" data-poptrox="youtube,800x400">Watch</a>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <a href="https://youtu.be/s6zR2T9vn2c" class="image fit" target="_blank"><img src="images/Portfolio Images/image5.jpg" alt="" /></a>
+                    <div class="inner">
+                        <h3>Nascetur nunc varius commodo</h3>
+                        <p>Interdum amet accumsan placerat commodo ut amet aliquam blandit nunc tempor lobortis nunc non. Mi accumsan.</p>
+                        <a href="https://youtu.be/s6zR2T9vn2c" class="button style3 fit" target="_blank" data-poptrox="youtube,800x400">Watch</a>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <a href="https://youtu.be/s6zR2T9vn2c" class="image fit" target="_blank"><img src="images/Portfolio Images/image6.jpg" alt="" /></a>
+                    <div class="inner">
+                        <h3>Nascetur nunc varius commodo</h3>
+                        <p>Interdum amet accumsan placerat commodo ut amet aliquam blandit nunc tempor lobortis nunc non. Mi accumsan.</p>
+                        <a href="https://youtu.be/s6zR2T9vn2c" class="button fit" target="_blank" data-poptrox="youtube,800x400">Watch</a>
+                    </div>
+                </div>
+
+            </div> 
+
         </section>
+
 
 
 
@@ -141,9 +192,22 @@
 
 
     <!--  SCRIPTS  -->
+
+    <!--  JQuery  -->
     <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <!--  JQuery Lightgallery  -->
+    <script src="js/lightgallery.min.js"></script>
+
+    <!-- Lightgallery Plugins -->
+    <script src="js/lg-thumbnail.min.js"></script>
+    <script src="js/lg-fullscreen.min.js"></script>
+    <script src="js/lg-zoom.min.js"></script>
+
+    <!--  Google Maps API  -->
     <script src="https://maps.googleapis.com/maps/api/js?callback=createMap&key=AIzaSyBM-XPoU01D1VC5nOMlkOF4EhIS2FE8MPU" async defer></script>
+
+    <!--  Main JS File  -->
     <script src="/js/main.js"></script>
     
 </body>
