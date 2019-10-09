@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Aclonica|Cabin+Sketch|Chelsea+Market|Delius|Marvel|Quicksand:500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Aclonica|Cabin+Sketch|Chelsea+Market|Delius|Livvic|Marvel|Quicksand:500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Audiowide&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <link type="text/css" rel="stylesheet" href="/css/lightgallery.min.css"> 
     <link rel="stylesheet" href="/css/main.css">
@@ -17,33 +18,98 @@
     <!--  HEADER  -->
     <header id="header">
         <div class="logo">
-            <h3>
-                <a href="https://p2-dev.com">p2-dev</a>
-            </h3>
+            <a href="https://p2-dev.com">
+                <img src="/images/p2logo3.png" alt="logo">
+            </a>
         </div>
     </header>
+    <!--  HEADER END  -->
 
 
-    <!--  NAV  -->
+    <!--  MAIN CONTENT  -->
     <div class="container">
-        <nav class="navbar">
-            <ul class="links">
-                <li class="active"><a class="scroll" href="#home">Home</a></li>
-                <li class=""><a class= "scroll" href="#about">About</a></li>
-                <li class=""><a class= "scroll" href="#portfolio">Portfolio</a></li>
-                <li class=""><a class= "scroll" href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+
+        <!--  NAVBAR  -->
+        <section class="navContainer">
+            <nav class="navbar">
+                <ul class="links">
+                    <li class="active"><a class="scroll" href="#home">Home</a></li>
+                    <li class=""><a class= "scroll" href="#about">About</a></li>
+                    <li class=""><a class= "scroll" href="#portfolio">Portfolio</a></li>
+                    <li class=""><a class= "scroll" href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="burger">
+                <input type="checkbox" id="nav" class="hidden">
+                <label for="nav" class="nav-btn">
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                </label>
+            </div>
+        </section>
+        <!-- NAVBAR END  -->
+
+
+
     
         <!--  SECTIONS FOR SMOOTH SCROLLING  -->
+        <!--  HOME LANDING PAGE  -->
         <section id="home">
-            <h1>Phillip Pense</h1>
-            <p>I am a full stack software developer</p>
+            <div id="homeLogo">
+                <img src="/images/websiteLogo.png" alt="name of person and profession">
+            </div>
         </section>
+
+        <!--  RESUME LINK BUTTON -->
+        <div class="resume">
+            <div class="resumeBtn">
+                <a href="/files/Resume.pdf" target="_blank"><span>View my Resume&#x301;<i class="fas fa-long-arrow-alt-right"></i></span></a>
+            </div>
+        </div>
+            <!--  RESUME LINK BUTTON END  -->
+        <!--  HOME LANDING PAGE END  -->
+
+
+
+        <!--  ABOUT ME PAGE  -->
         <section id="about">
             <h1>About Me</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus, totam, culpa odio fugiat reprehenderit at placeat perferendis consequatur quas impedit aut nemo temporibus, nam fugit.</p>
+            <div id="aboutContent">
+                <div id="aboutImage">
+                    <img src="/images/aboutMe/self2.jpg" alt="Self image outside with cup of coffee">
+                </div>
+                <div id="aboutText">
+                    <p>Hi, and Thank You for visiting my portfolio website.  I am <span class="name">Phillip Pense</span>, a full stack software developer from Austin.  I currently work part-time as a web developer for a small real estate and design company in Austin but am looking for full-time employment as a software developer.
+                        <br>
+                        <br>
+                    As a graduate of Woz-U Full Stack Software Development program, I am proficient in <span class="html">HTML5</span>, <span class="css">CSS3</span>, <span class="javascript">Javascript</span>, and <span class="java">Java</span> languages, as well as <span class="my">My</span><span class="sql">SQL</span> and <span class="mongo">MongoDB</span> databases.  I am also semi-proficient in their frameworks/libraries, Bootstrap, JQuery, ReactJS, Ionic, Spring, and Hibernate.
+                        <br>
+                        <br>                    
+                    Analytical by nature, I enjoy trying to figure out how things work, often dissecting the item so I may improve on it and make it my own.  I enjoy learning, especially subjects involving math, science, and technology.
+                        <br>
+                        <br>
+                    Being from Texas, I love anything football.  My freshman year attending Texas Tech, I quarterbacked our fraternity intramural football team to a Red Division Championship with the help of some very talented fraternity brothers.  Today, I mostly just enjoy watching (yelling at) my favorite football teams and participating in as many fantasy football leagues I can join. 
+                        <br>
+                        <br>
+                    Besides being a die-hard football fan, I enjoy everything Central Texas has to offer.  Live music.  Good food.  A cool patio.  And, golf.  Nothing helps wind down a long week better than listening to live music and drinking a few suds with friends on a cool outdoor patio.  That... or golf.  
+                        <br>
+                        <br>
+                    I try not to take myself too serious and can often be seen making fun of myself.  I am an open book.  If you wish to know more about me, just ask.  You may reach me using the contact form below, or email me direct at <span class="email">phillip</span> {dot} <span class="email">t</span> {dot} <span class="email">pense</span> {at} <span class="email">gmail</span> {dot} <span class="email">com</span>.  <span class="dontForget"> (Don't forget my middle initial.)</span>
+                        <br>
+                        <br>
+                    <span class="name">~ Phillip</span>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                    <span class="quote">"Do the difficult things while they are easy and do the great things while they are small.  A journey of a thousand miles must begin with a single step." ~ Lao Tzu</span>
+                    </p>
+                </div>
+            </div>
         </section>
+        <!--  ABOUT ME PAGE END  -->
 
 
 
@@ -70,8 +136,7 @@
                     </div>
                     <div class="inner">
                         <h3>Take Me Home Transport Website</h3>
-                        <br>
-                        <p>Responsive front-end design landing page for charity organization.  HTML, CSS, Javascript, Bootstrap, JQuery, Grid.</p>
+                        <p>Responsive front-end design landing page for charity organization using HTML, CSS, Javascript, Bootstrap, JQuery, Flexbox and Grid.</p>
                         <a href="https://takemehometransport.com" class="button fit" target="_blank">Website</a>
                         <a href="https://github.com/proudtxn/TakeMeHomeTransport" class="button fit" target="_blank">GitHub</a>
                     </div>
@@ -94,7 +159,7 @@
                     </div>
                     <div class="inner">
                         <h3>Kendrick Realty, Design & Reno ~ Company Web Page Under Construction</h3>
-                        <p>Responsive fully functional webpage using HTML, CSS, Javascript, JQuery, Flexbox, Java, MySQL, Web API.</p>
+                        <p>Responsive fully functional webpage using HTML, CSS, Javascript, JQuery, Flexbox, Java, MySQL, and Web API.</p>
                         <a href="https://kendrickmyhouse.com" class="button fit" target="_blank">Website</a>
                         <a href="https://github.com/proudtxn/Kendrick-Realty-Design-Reno" class="button fit" target="_blank">GitHub</a>
                     </div>
@@ -108,9 +173,7 @@
                     </div>
                     <div class="inner">
                         <h3>Javascript Drum Kit</h3>
-                        <br>
                         <p>Keystroke drum kit using HTML, CSS, and Javascript.</p>
-                        <br>
                         <a href="/drumkit/index.html" class="button fit" target="_blank">Play the Drums</a>
                         <a href="https://github.com/proudtxn/Javascript-Drum-Kit" class="button fit" target="_blank">GitHub</a>
                     </div>
@@ -124,40 +187,49 @@
                     </div>
                     <div class="inner">
                         <h3>Javascript Simon Game</h3>
-                        <br>
                         <p>Simon Game featuring HTML, CSS, and Javascript.</p>
-                        <br>
                         <a href="/simongame/index.html" class="button fit" target="_blank">Play Simon Game</a>
                         <a href="https://github.com/proudtxn/Simon-Game" class="button fit" target="_blank">GitHub</a>
                     </div>
                 </div>
 
                 <div class="box">
-                    <a href="https://youtu.be/s6zR2T9vn2c" class="image fit" target="_blank"><img src="images/Portfolio Images/image5.jpg" alt="" /></a>
+                    <div id="lightgallery">
+                        <a href="images/Portfolio Images/flexpanel~screenshot.png" class="image fit" target="_blank">
+                            <img src="images/Portfolio Images/flexpanel~screenshot.png" alt="" />
+                        </a>
+                    </div>
                     <div class="inner">
-                        <h3>Nascetur nunc varius commodo</h3>
-                        <p>Interdum amet accumsan placerat commodo ut amet aliquam blandit nunc tempor lobortis nunc non. Mi accumsan.</p>
-                        <a href="https://youtu.be/s6zR2T9vn2c" class="button style3 fit" target="_blank" data-poptrox="youtube,800x400">Watch</a>
+                        <h3>Flexible Panel Gallery</h3>
+                        <p>Flexible images using HTML, CSS, Flexbox, and Javascript.</p>
+                        <a href="/flexpanelgallery/index.html" class="button fit" target="_blank">See it Work</a>
+                        <a href="https://github.com/proudtxn/Flex-Panel-Gallery" class="button fit" target="_blank">GitHub</a>
                     </div>
                 </div>
 
                 <div class="box">
-                    <a href="https://youtu.be/s6zR2T9vn2c" class="image fit" target="_blank"><img src="images/Portfolio Images/image6.jpg" alt="" /></a>
+                    <div id="lightgallery">
+                        <a href="images/Portfolio Images/IDCard~screenshot.png" class="image fit" target="_blank">
+                            <img src="images/Portfolio Images/IDCard~screenshot.png" alt="" />
+                        </a>
+                    </div>
                     <div class="inner">
-                        <h3>Nascetur nunc varius commodo</h3>
-                        <p>Interdum amet accumsan placerat commodo ut amet aliquam blandit nunc tempor lobortis nunc non. Mi accumsan.</p>
-                        <a href="https://youtu.be/s6zR2T9vn2c" class="button fit" target="_blank" data-poptrox="youtube,800x400">Watch</a>
+                        <h3>Create an ID Card</h3>
+                        <p>Create an ID card using HTML, CSS, and Javascript.</p>
+                        <a href="/IDCard/index.html" class="button fit" target="_blank">Create an ID Card</a>
+                        <a href="https://github.com/proudtxn/IDCard" class="button fit" target="_blank">GitHub</a>
                     </div>
                 </div>
 
             </div> 
 
         </section>
+        <!--  PORTFOLIO PAGE END  -->
 
 
 
 
-        <!--  CONTACT PAGE -->
+        <!--  CONTACT ME PAGE  -->
         <section id="contact">
             <h1>Contact</h1>
 
@@ -185,20 +257,19 @@
                     </label>
                 </form>
             </div>
+            <!--  CONTACT ME FORM END  -->
 
             <!--  LOCATE ME ~ GOOGLE MAP API -->
             <div class="locateMe">
                 <h3>Locate Me</h3>
                 <div id="map"></div>
             </div>
-
-            <!--  RESUME LINK BUTTON -->
-            <div class="resume">
-                <div class="resumeBtn">
-                    <a href="/files/Resume.pdf" target="_blank"><span>Resume&#x301;</span></a>
-                </div>
-            </div>
+            <!--  LOCATE ME ~ GOOGLE MAP API END-->
         </section>
+        <!--  CONTACT ME PAGE END  -->
+
+
+
 
         <!--  FOOTER  -->
         <footer>
@@ -212,18 +283,25 @@
                 <ul>
                     <li class="linkedIn"><a href="https://www.linkedin.com/in/phillip-pense/" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
                     <li><a href="https://github.com/proudtxn" target="_blank"><i class="fab fa-github"></i></a></li>
-                    <li><a onclick="alert('Phillip does not have a Facebook page...  yet!')"><i class="fab fa-facebook-f"></i></a></li>
+                    <!--
+                    <li><a onclick="alert('Phillip does not have a Facebook page.')"><i class="fab fa-facebook-f"></i></a></li>
                     <li><a onclick="alert('Phillip does not tweet.')"><i class="fab fa-twitter"></i></a></li>
                     <li><a href="https://www.youtube.com/watch?v=QUEt3UqKp3Q" target="_blank"><i class="fab fa-google-plus-g"></i></a></li>
                     <li><a href="https://medium.com/@proudtxn" target="_blank"><i class="fab fa-medium-m"></i></a></li>
+                    -->
                 </ul>
             </div>
+            <!--  SOCIAL MEDIA LINKS END  -->
         </footer>
+        <!--  FOOTER END  -->
     </div>
+    <!--  MAIN CONTENT END  -->
+
+
+    
 
 
     <!--  SCRIPTS  -->
-
     <!--  JQuery  -->
     <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 

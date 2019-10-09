@@ -3,38 +3,26 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'quicksand', sans-serif;
+    font-family: 'audiowide', 'quicksand', cursive;
 }
 
 
 /********  HEADER - LOGO  ***********/
 header {
-    padding: 5px 50px;
+    padding: 10px 50px;
     float: left;
-    font-size: 15px;
     position: fixed;
-    color: black;
     z-index: 199;
 }
 
-header h3 {
-    letter-spacing: 2px;
-}
-
-header h3 a {
-    text-decoration: none;
-    color: black;
-}
-
-header.black h3 a {
-    color: #fff;
-    transition: .3s;
-    font-weight: 100;
+header img {
+    width: 150px;
 }
 
 
 
 /********  NAVBAR  ***********/
+/********  DESKTOP NAVBAR  ***********/
 nav {
     z-index: 99;
     position: fixed;
@@ -42,36 +30,32 @@ nav {
     left: 0;
     width: 100%;
     height: 70px;
-    padding: 10px 100px;
+    padding: 0px 100px;
     box-sizing: border-box;
     transition: .3s;
 }
 
 nav.black {
-    background: rgba(0, 0, 0, 0.8);
-    height: 70px;
-    padding: 10px 100px;
-}
-
-nav.black {
     color: #fff;
+    background: rgba(0, 0, 0, 0.8);
+    height: 80px;
+    padding: 0px 100px;
 }
 
 nav ul {
     list-style: none;
     float: right;
-    margin: 0;
     padding: 0;
     display: flex;
 }
 
 nav ul li a {
     line-height: 50px;
-    color: black;
-    padding: 12px 30px;
+    color: white;
+    padding: 15px 30px;
     text-decoration: none;
     text-transform: uppercase;
-    transition: .3s;
+    transition: .1s;
 }
 
 nav.black ul li a {
@@ -83,75 +67,540 @@ nav ul li a:focus {
 }
 
 .active {
-    background: red;
+    /*background: rgb(86, 119, 139);*/
+    background: #FFBF00;
     color: #fff;
     border-radius: 25px 0px;
+    border: 2px solid white;
 }
 
 nav ul li a:hover {
-    background: red;
+    /*background: rgb(86, 119, 139);*/
+    background: #FFBF00;
     color: #fff;
     border-radius: 25px 0px;
-    transition: .5s;
+    transition: .1s;
+    border: 2px solid white;
 }
 
-
-
-
-/********  BACKGROUND IMAGE  ***********/
-section {
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
+.burger {
+    display: none;
 }
 
+@media screen and (max-width: 1300px) {
+
+    nav {
+        padding: 0px 25px;
+    }
+
+    nav.black {
+        padding: 0px 25px;
+    }
+}
+/********  DESKTOP NAVBAR END  ***********/
+
+
+
+/********  MOBILE NAVBAR  ***********/
+@media screen and (max-width: 880px) {
+
+    header {
+        background: black;
+        width: 100%;
+    }
+
+    .active {
+        border: none;
+        border-radius: 0;
+        background: none;
+    }
+
+    nav {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    nav.black {
+        padding: 0;
+    }
+
+    nav ul {
+        margin-top: 85px;
+        display: block;
+        background: black;
+        text-align: right;
+        height: 100vh;
+        width: 100%;
+    }
+
+    nav ul li {
+        padding: 25px;
+    }
+
+    nav ul li a {
+        font-family: 'Livvic', 'quicksand', cursive;
+        letter-spacing: 5px;
+    }
+
+    nav ul li a.active {
+        background: 0;
+    }
+
+    nav ul li a:hover {
+        background: none;
+        border-radius: 0;
+        border: none;
+        margin-right: 20px;
+        color: #ffbf00;
+    }
+
+    .links {
+        position: fixed;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+
+    .links li {
+        opacity: 0;
+    }
+
+    .links li a {
+        transform: translateX(-20px);
+        transition: all 300ms ease;
+    }
+
+
+    /********  BURGER DESIGN  ***********/
+    .burger {
+        display: block;
+    }
+
+    .nav-btn {
+        position: fixed;
+        right: 40px;
+        top: 25px;
+        display: block;
+        width: 48px;
+        height: 48px;
+        cursor: pointer;
+        z-index: 9999;
+        border-radius: 50%;
+    }
+
+    .nav-btn i {
+        display: block;
+        width: 20px;
+        height: 2px;
+        background: #ffbf00;
+        border-radius: 2px;
+        margin-left: 14px;
+    }
+
+    .nav-btn i:nth-child(1) {
+        margin-top: 16px;
+    }
+    .nav-btn i:nth-child(2) {
+        margin-top: 4px;
+        opacity: 1;
+    }
+    .nav-btn i:nth-child(3) {
+        margin-top: 4px;
+    }
+    /********  BURGER DESIGN END  ***********/
+
+    /********  ANIMATED NAVIGATION MENU  **********/
+    .nav-active {
+        transform: translateX(0%);
+    }
+
+    @keyframes navLinkFade {
+        from {
+            opacity: 0;
+            transform: translateX(-250px);  /* 'a' menu links slide into view */
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0px);  /* location for 'a' menu links to stop sliding */
+        }
+    }
+    /********  ANIMATED NAVIGATION MENU END  **********/
+
+    /********  BURGER ANIMATION EFFECT  **********/
+    #nav:checked + .nav-btn {
+        transform: rotate(45deg);
+    }
+
+    #nav:checked + .nav-btn i {
+        transition: transform 0.5s ease;
+    }
+
+    #nav:checked + .nav-btn i:nth-child(1) {
+        transform: translateY(6px) rotate(180deg);
+        background: white;
+    }
+
+    #nav:checked + .nav-btn:hover i:nth-child(1) {
+        background: #ffbf00;
+    }
+
+    #nav:checked + .nav-btn i:nth-child(2) {
+        opacity: 0;
+    }
+
+    #nav:checked + .nav-btn i:nth-child(3) {
+        transform: translateY(-6px) rotate(90deg);
+        background: white;
+    }
+
+    #nav:checked + .nav-btn:hover i:nth-child(3) {
+        background: #ffbf00;
+    }
+
+    #nav:checked ~ .nav-wrapper {
+        z-index: 9990;
+        opacity: 1;
+    }
+
+    #nav:checked ~ .nav-wrapper ul li a {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    #nav:not(checked) + .nav-btn i {
+        transition: transform 0.5s ease;
+    }
+
+    #nav:not(checked) + .nav-btn i:nth-child(1) {
+        transform: translateY(-2px) rotate(-180px);
+        margin-top: 16px;
+    }
+
+    #nav:not(checked) + .nav-btn i:nth-child(2) {
+        transform: translateY(0px) rotate(-180deg);
+        opacity: 1;
+    }
+
+    #nav:not(checked) + .nav-btn i:nth-child(3) {
+        transform: translateY(0px) rotate(-180deg);  
+    }
+    /********  BURGER ANIMATION EFFECT END  **********/
+}
+
+@media screen and (max-height: 500px) {
+
+    nav ul li {
+        padding: 10px 30px;
+        text-align: center;
+    }
+
+    nav ul li:hover a {
+        margin: 0;
+    }
+}
+
+@media screen and (max-height: 400px) {
+
+    nav ul li {
+        padding: 0px;
+    }
+}
+/********  MOBILE NAVBAR END  ***********/
+/********  NAVBAR END  ***********/
+
+
+
+
+/********  UNIVERSAL PAGE HEADERS  ***********/
 section h1 {
     font-size: 3rem;
 }
 
-section#home {
-    background: url(/images/Coding1.jpg);
+
+/********  HOME PAGE  ***********/
+#home {
+    background: 
+        linear-gradient(
+            rgba(0, 0, 0, .7),
+            rgba(0, 0, 0, .7)
+        ), 
+        url(/images/Coding1.jpg);
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
     height: 100vh;
+    display: flex;
 }
 
-section#home h1 {
-    color: red;
-    text-align: center;
-    letter-spacing: 4px;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-section p {
-    color: red;
-    font-size: 1.5rem;
-    text-align: center;
-}
-
-section#about {
-    background: url(/images/mountainsailing.jpg) no-repeat center center/cover;
-    height: 100vh;
-}
-
-section#about h1 {
-    color: red;
-    display: grid;
-    align-items: center;
+#home #homeLogo {
+    display: flex;
     justify-content: center;
-    letter-spacing: 4px;
-    font-weight: bold;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+
+#homeLogo img {
+    padding: 50px;
+    max-width: 100%;
+    height: auto;
+}
+
+@media screen and (max-width: 500px) {
+
+    #homeLogo img {
+        padding: 10px;
+    }
+}
+/********  HOME PAGE END  ***********/
+
+
+
+/********  RESUME LINK BUTTON ***********/
+.resume {
+    display: flex;
+    justify-content: center;
+    margin-top: -100px;
+    padding-bottom: 30px;
+}
+
+.resumeBtn {
+    cursor: pointer;
+    background: #FFBF00;
+    padding: 0px 25px;
+    line-height: 60px;
+    letter-spacing: 1px;
     text-transform: uppercase;
+    position: relative;
+    transition: all 0.2s ease-in-out;
+    overflow: hidden;
+    border: 3px solid white;
+    white-space: nowrap; 
 }
 
-section#about p {
+.resumeBtn:hover {
+    border: 3px solid white;
+}
+
+.resumeBtn a {
+    text-decoration: none;
     color: white;
-    text-align: center;
+}
+
+.resumeBtn:hover a {
+    font-size: 17px;
+}
+
+.resumeBtn span {
+    font-family: 'audiowide', 'quicksand', cursive;
+    position: relative;
+    z-index: 1;
+}
+
+.resumeBtn i {
+    margin-left: 12px;
+}
+
+.resumeBtn::before, .resumeBtn::after {
+    content: '';
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: block;
+    position: absolute;
+}
+
+.resumeBtn::before {
+    transform: translate3d(-100%, 0, 0);
+    background-color: rgba(22, 65, 129, 0.5);
+    transition: all 150ms ease-in-out;
+}
+
+.resumeBtn::after {
+    background-color: black;
+    transform: translate3d(101%, 0, 0);
+    transition: all 150ms 150ms ease-in-out;
+}
+
+.resumeBtn:hover::before {
+    transform: translate3d(0,0,0);
+}
+
+.resumeBtn:hover::after {
+    transform: translate3d(0,0,0);
+}
+/********  RESUME LINK BUTTON END  ***********/
+
+
+
+
+/********  ABOUT ME PAGE  ***********/
+#about {
+    display: grid;
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, .8),
+            rgba(0, 0, 0, .7)
+        ),
+        url(/images/aboutMe/background/image7.jpg) no-repeat center center/cover;
+    height: 100%;
+    color: white;
 }
 
 
+@media screen and (min-width: 1300px) and (min-height: 850px) {
+    
+    #about {
+        height: 100vh;
+    }
+}
+
+@media screen and (max-width: 800px) {
+
+    #about {
+        height: 100vh;
+    }
+}
+
+@media screen and (max-width: 736px) {
+
+    #about {
+        height: 100%;
+    }
+}
+
+#about h1 {
+    padding-top: 50px;
+    letter-spacing: 5px;
+    text-align: center;
+    text-transform: uppercase;
+    justify-self: center;
+    font-weight: lighter;
+    color: #FFBF00;
+}
+
+#about h1::after {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+    padding-top: 15px;
+    border-bottom: 5px solid white;
+}
+
+#aboutContent {
+    justify-content: center;
+    display: flex;
+}
+
+#aboutImage {
+    margin-bottom: 50px;
+    padding: 0px 25px 25px 25px;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+#aboutImage img {
+    width: 100%;
+    height: auto;
+}
+
+#aboutText {
+    display: flex;
+    width: 55%;
+    padding: 0px 25px 25px 25px;
+}
+
+#aboutText p {
+    font-size: 15px;
+    word-spacing: 2px;
+    font-weight: 100;
+    font-family: 'quicksand', cursive;
+}
+
+#aboutText p .name {
+    color: rgb(86, 119, 139);
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+/*********  ABOUT ME ~ RESPONSIVE  ************/
+@media screen and (max-width: 850px) {
+
+    #aboutText p {
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    #aboutContent {
+        display: block;
+    }
+
+    #aboutImage {
+        margin-bottom: 0;
+    }
+
+    #aboutText {
+        width: 100%;
+    }
+}
+
+
+
+
+#aboutText p .html {
+    color: rgb(255, 81, 0);
+}
+
+#aboutText p .css {
+    color: rgb(0, 89, 255);
+}
+
+#aboutText p .javascript {
+    color: rgb(252, 207, 5);
+}
+
+#aboutText p .java {
+    color: red;
+}
+
+#aboutText p .my {
+    color: rgb(46, 147, 187);
+}
+
+#aboutText p .sql {
+    color: orange;
+}
+
+#aboutText p .mongo {
+    color: rgb(45, 131, 66);
+}
+
+#aboutText p .email {
+    color: rgb(86, 119, 139);
+    text-decoration: underline;
+}
+
+#aboutText p .dontForget {
+    font-style: italic;
+    opacity: .5;
+}
+
+#aboutText p .quote {
+    color: grey;
+}
+
+
+/********  ABOUT ME PAGE END  ***********/
 
 
 
@@ -159,13 +608,13 @@ section#about p {
 
 /********  PORTFOLIO PAGE  ***********/
 #portfolio {
+    display: grid;
     padding: 0 150px !important;
     background: 
     linear-gradient(
-            rgba(255, 255, 255, 0.9),
-            rgba(255, 255, 255, 0.9)
+            rgba(128, 130, 131, 0.8),
+            rgba(128, 130, 131, 0.8)
         ),
-        
         url(/images/coding2.jpg);
     background-size: cover;
     background-position: center;
@@ -173,11 +622,12 @@ section#about p {
 
 #portfolio h1 {
     padding-top: 50px;
-    color: black;
+    color: #FFBF00;
     letter-spacing: 5px;
     text-align: center;
     text-transform: uppercase;
     justify-self: center;
+    font-weight: lighter;
 }
 
 #portfolio h1::after {
@@ -186,7 +636,7 @@ section#about p {
     margin: 0 auto;
     width: 50%;
     padding-top: 15px;
-    border-bottom: 5px solid rgba(22, 65, 129, .9);
+    border-bottom: 5px solid white;
 }
 
 @media screen and (max-width: 1280px) {
@@ -211,7 +661,6 @@ section#about p {
 }
 
 /* Basic */
-
 @-ms-viewport {
     width: device-width;
 }
@@ -226,8 +675,6 @@ body {
         min-width: 320px;
     }
 }
-
-
 
 
 /* Box */
@@ -248,6 +695,7 @@ body {
     -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+    font-family: 'quicksand', cursive;
 }
 
 .thumbnails .box {
@@ -274,6 +722,7 @@ body {
     margin-bottom: 2em;
     background: #2c2c32;
     text-align: center;
+    border: 1px solid black;
 }
 
 .box > :last-child,
@@ -293,6 +742,15 @@ body {
 .box .inner {
     padding: 1.5em;
     width: 100% !important;
+    border-top: 5px solid black;
+}
+
+.inner h3 {
+    min-height: 75px;
+}
+
+.inner p {
+    min-height: 75px;
 }
 
 @media screen and (max-width: 480px) {
@@ -385,7 +843,7 @@ body {
     -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
     -ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-    background-color: #70c7be;
+    background: rgba(92, 153, 194, 0.3);
     border-radius: 4px;
     border: 0;
     color: #ffffff !important;
@@ -401,7 +859,7 @@ body {
 }
 
 .button:hover {
-    background-color: #82cec6;
+    background-color: rgba(92, 153, 194, 1);
 }
 
 .button.fit {
@@ -489,7 +947,7 @@ body {
 
 
 /********  CONTACT PAGE  ***********/
-section#contact {
+#contact {
     background:
         linear-gradient(
             rgba(22, 65, 129, 0.3),
@@ -513,7 +971,7 @@ section#contact {
 
 #contact h1 {
     padding-top: 50px;
-    color: white;
+    color: #FFBF00;
     letter-spacing: 5px;
     font-weight: lighter;
     grid-column: 6/8;
@@ -527,7 +985,7 @@ section#contact {
     margin: 0 auto;
     width: 50%;
     padding-top: 15px;
-    border-bottom: 5px solid black;
+    border-bottom: 5px solid white;
 }
 
 
@@ -539,7 +997,7 @@ section#contact {
     grid-row: 2;
     justify-self: stretch;
     line-height: 1.6;
-    font-family: 'quicksand', sans-serif;
+    font-family: 'audiowide', 'quicksand', cursive;
     padding-left: 50px;
     padding-right: 25px;
 }
@@ -572,21 +1030,45 @@ section#contact {
     margin-right: 50px;
 }
 
+.contactForm form button:hover {
+    font-size: 17px;
+}
+
 .contactForm form label input::placeholder, .contactForm form label textarea::placeholder {
-    font-family: 'quicksand', sans-serif;
+    font-family: 'Livvic', sans-serif;
     color: white;
 }
 
 .contactForm form label input:focus, .contactForm form label textarea:focus {
-    font-family: 'quicksand', sans-serif;
+    font-family: 'Livvic', sans-serif;
     color: white;
+}
+
+@media screen and (max-width: 500px) {
+
+    #contact .contactForm {
+        clear: both;
+        margin: 0;
+        padding: 0;
+        grid-column: 1/13;
+        margin-top: -175px;
+        padding: 0 10px;
+    }
+
+    .contactForm form input, .contactForm form textarea {
+        width: 100%;
+    }
+
+    .contactForm form button {
+        margin: 0;
+    }
 }
 
 
 /********  CONTACT FORM ~ SUBMIT BUTTON SHINEY ANIMATION  ***********/
 .contactForm .submit {
     cursor: pointer;
-    font-family: 'quicksand', sans-serif;
+    font-family: 'audiowide', 'quicksand', cursive;
     letter-spacing: 2px;
     text-transform: uppercase;
     padding: 0.75em 3em;
@@ -615,14 +1097,12 @@ section#contact {
     transition: none;
 }
 
-.contactForm .submit:hover{
-    background-color: black; 
-}
-
 .contactForm .submit:hover::before {
     transform: skewX(-45deg) translateX(15.5em);
     transition: all .7s ease-in-out;
 }
+/********  CONTACT FORM ~ SUBMIT BUTTON SHINEY ANIMATION END  ***********/
+/********  CONTACT PAGE ~ CONTACT FORM END  ***********/
 
 
 /********  CONTACT PAGE ~ LOCATE ME W/ GOOGLE MAPS  ***********/
@@ -648,69 +1128,20 @@ section#contact {
     height: 319px;
 }
 
+@media screen and (max-width: 500px) {
 
-/********  CONTACT PAGE ~ RESUME LINK BUTTON ***********/
-.resume {
-    margin-top: 100px;
-    padding: 0;
-    grid-column: 6/8;
-    grid-row: 3;
+    .locateMe {
+        clear: both;
+        margin: 0;
+        padding: 0 10px;
+        margin-top: -50px;
+        grid-column: 1/13;
+        grid-row: 3;
+        padding-bottom: 50px;
+    }
 }
-
-.resumeBtn {
-    cursor: pointer;
-    background: rgb(184, 184, 184);
-    padding: 0px 50px;
-    line-height: 40px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    position: relative;
-    transition: all 0.2s ease-in-out;
-    overflow: hidden;
-    border: 3px solid black;
-}
-
-.resumeBtn a {
-    text-decoration: none;
-    color: white;
-}
-
-.resumeBtn span {
-    font-family: 'quicksand', sans-serif;
-    position: relative;
-    z-index: 100;
-}
-
-.resumeBtn::before, .resumeBtn::after {
-    content: '';
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    display: block;
-    position: absolute;
-    border: 1px solid black;
-}
-
-.resumeBtn::before {
-    transform: translate3d(-100%, 0, 0);
-    background-color: white;
-    transition: all 300ms ease-in-out;
-}
-
-.resumeBtn::after {
-    background-color: rgb(235, 162, 162);
-    transform: translate3d(100%, 0, 0);
-    transition: all 300ms 300ms ease-in-out;
-}
-
-.resumeBtn:hover::before {
-    transform: translate3d(0,0,0);
-}
-
-.resumeBtn:hover::after {
-    transform: translate3d(0,0,0);
-}
+/********  CONTACT PAGE ~ LOCATE ME W/ GOOGLE MAPS END  ***********/
+/********  CONTACT PAGE END  ***********/
 
 
 
@@ -719,11 +1150,11 @@ section#contact {
 /********  FOOTER  ***********/
 footer {
     margin: 0;
-    padding: 10px;
+    padding: 0;
     color: white;
     background: rgba(52, 108, 143, 0.3);
     display: grid;
-    grid-template-columns: repeat(24, 1fr);
+    /* grid-template-columns: repeat(24, 1fr); */
     grid-template-rows: 1fr 1fr;
     justify-items: center;
     align-items: center;
@@ -731,25 +1162,23 @@ footer {
 }
 
 .copyWrite {
-    padding: 10px;
+    padding: 0;
     font: 15px 'quicksand', sans-serif;
     grid-column: 1/25;
     grid-row: 2;
     display: grid;
-    grid-template-columns: repeat(24, 1fr);
-    justify-content: center;
     align-items: center;
     grid-gap: 5px;
 }
 
 .copyWrite span {
-    grid-column: 1/13;
+    grid-column: 1/12;
     justify-self: end;
     color: black;
 }
 
 .copyWrite p {
-    grid-column: 13/24;
+    grid-column: 13/25;
     justify-self: start;
 }
 
@@ -761,18 +1190,17 @@ footer {
 
 /********  FOOTER ~ SOCIAL MEDIA LINKS  ***********/
 .socialMedia {
-    margin: 0;
+    display: grid;
+    padding-top: 15px;
     grid-column: 1/25;
     grid-row: 1;
-    justify-self: center;
-    align-items: center;
 }
 
 .socialMedia ul {
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     justify-items: center;
     grid-gap: 15px;
 }
@@ -831,4 +1259,7 @@ footer {
 .socialMedia ul li:nth-child(6) a:hover .fab {
     color: #02b875;
 }
+/********  FOOTER ~ SOCIAL MEDIA LINKS END  ***********/
+/********  FOOTER END  ***********/
+/********  CSS END  ***********/
 

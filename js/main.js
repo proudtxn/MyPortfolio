@@ -105,8 +105,40 @@ $(document).ready(function () {
 });
 
 
+
+
+//  BURGER FUNCTIONALITY
+const navSlide = () => {
+    const burger = document.querySelector('.nav-btn');
+    const nav = document.querySelector('.links');
+    const navLinks = document.querySelectorAll('.links li');
+
+    
+    burger.addEventListener('click', () => {
+
+        // Toggle Nav Slide
+        nav.classList.toggle('nav-active');
+
+        // Animate 'a'Links Slide in
+        navLinks.forEach((link, index) => {
+			if (link.style.animation) {
+				link.style.animation = '';
+			}
+			else {
+				link.style.animation = `navLinkFade 0.5s ease forwards ${index / 15 + 0.5}s`;
+            }
+        });
+    });
+}
+navSlide();
+//  END ~ BURGER FUNCTIONALITY
+
+
 //  CALL LIGHTGALLERY MODAL FUNCTION
 $(document).ready(function() {
 	$("#lightgallery").lightGallery(); 
 });
+
+
+
 
